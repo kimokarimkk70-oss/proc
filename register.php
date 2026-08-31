@@ -21,13 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if (mysqli_stmt_execute($stmt)) {
                 $message = "<p style='color: green;'>تم التسجيل بنجاح!</p>";
             } else {
-                $message = "<p style='color: red;'>حدث خطأ أثناء التسجيل: " . mysqli_error($conn) . "</p>";
+                $message = "<p style='color: red;'>حدث خطا أثناء التسجيل: " . mysqli_error($conn) . "</p>";
             }
 
             mysqli_stmt_close($stmt);
         }
     } else {
-        $message = "<p style='color: red;'>يرجى ملء جميع الحقول المطلوبة.</p>";
+        $message = "<p style='color: red;'>ياريت تملي الحاجات الي مش مكتوبه</p>";
     }
 }
 ?>
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
 
     <div class="big">
-        <h1>New Login Account</h1>
+        <h1>New Logan Account</h1>
 
         <?php
         if (!empty($message)) {
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <input placeholder="* username" type="text" name="name" required>
             <input placeholder="* email" type="email" name="email" required>
             <input placeholder="* password" type="password" name="password" required>
-            <button type="submit">إنشاء حساب</button>
+            <button type="submit">انشاء حساب</button>
         </form>
     </div>
     <script src="script.js"></script>
